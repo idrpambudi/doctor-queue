@@ -7,6 +7,9 @@ class Doctor {
     }
 }
 
+// Priority Queue data structure is chosen to fasten up the look up of the next available doctor.
+// The overall time complexity of the algorithm is O(P * log D).
+// Where P is the patient queue number and D is the number of doctors.
 const getPatientWaitingTime = (position, doctors) => {
     const pq = new PriorityQueue((a, b) => a[1] < b[1]);
     doctors.forEach(doctor => pq.push([doctor, doctor.consultationTime]));
